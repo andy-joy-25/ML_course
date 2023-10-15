@@ -24,4 +24,8 @@ def build_poly(x, degree):
     # this function should return the matrix formed
     # by applying the polynomial basis to the input data
     # ***************************************************
-    raise NotImplementedError
+    rpoly = np.zeros((x.shape[0],degree+1))
+    for i in range(x.shape[0]):
+        for j in range(degree+1):
+            poly[i][j] = np.power(x[i],j)
+    return poly
