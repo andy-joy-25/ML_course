@@ -22,11 +22,7 @@ def least_squares(y, tx):
     >>> least_squares(np.array([0.1,0.2]), np.array([[2.3, 3.2], [1., 0.1]]))
     (array([ 0.21212121, -0.12121212]), 8.666684749742561e-33)
     """
-    # ***************************************************
-    # COPY YOUR CODE FROM EX03 HERE
-    # least squares: TODO
-    # returns optimal weights, MSE
-    # ***************************************************
+    
     w = np.linalg.solve(np.matmul(tx.T,tx),np.matmul(tx.T,y))
     
     mse = (0.5*(1/y.shape[0])*np.matmul((y - np.matmul(tx,w)).T,(y - np.matmul(tx,w)))).item()
